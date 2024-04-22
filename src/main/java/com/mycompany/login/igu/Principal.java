@@ -22,7 +22,6 @@ public class Principal extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
-        txtContrasenia = new javax.swing.JTextField();
         txtUsuario = new javax.swing.JTextField();
         jSeparator1 = new javax.swing.JSeparator();
         jSeparator2 = new javax.swing.JSeparator();
@@ -30,6 +29,7 @@ public class Principal extends javax.swing.JFrame {
         jScrollPane1 = new javax.swing.JScrollPane();
         txtMensaje = new javax.swing.JTextArea();
         btnLogin = new javax.swing.JButton();
+        txtContrasenia = new javax.swing.JPasswordField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -42,11 +42,7 @@ public class Principal extends javax.swing.JFrame {
         jLabel3.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
         jLabel3.setText("Contraseña:");
 
-        txtContrasenia.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtContraseniaActionPerformed(evt);
-            }
-        });
+        txtUsuario.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
 
         jSeparator1.setBorder(javax.swing.BorderFactory.createCompoundBorder());
 
@@ -61,6 +57,7 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
+        txtMensaje.setEditable(false);
         txtMensaje.setColumns(20);
         txtMensaje.setRows(5);
         jScrollPane1.setViewportView(txtMensaje);
@@ -72,6 +69,9 @@ public class Principal extends javax.swing.JFrame {
                 btnLoginActionPerformed(evt);
             }
         });
+
+        txtContrasenia.setFont(new java.awt.Font("Helvetica Neue", 0, 18)); // NOI18N
+        txtContrasenia.setText("jPasswordField1");
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -97,9 +97,9 @@ public class Principal extends javax.swing.JFrame {
                                     .addComponent(jLabel3)
                                     .addComponent(jLabel2))
                                 .addGap(32, 32, 32)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(txtContrasenia, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtUsuario, javax.swing.GroupLayout.PREFERRED_SIZE, 205, javax.swing.GroupLayout.PREFERRED_SIZE)))))
+                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(txtUsuario)
+                                    .addComponent(txtContrasenia, javax.swing.GroupLayout.DEFAULT_SIZE, 205, Short.MAX_VALUE)))))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(143, 143, 143)
                         .addComponent(jLabel1))
@@ -150,10 +150,6 @@ public class Principal extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void txtContraseniaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtContraseniaActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_txtContraseniaActionPerformed
-
     private void btnLimpiarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLimpiarActionPerformed
         
         txtUsuario.setText("");
@@ -179,7 +175,7 @@ public class Principal extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
-    private javax.swing.JTextField txtContrasenia;
+    private javax.swing.JPasswordField txtContrasenia;
     private javax.swing.JTextArea txtMensaje;
     private javax.swing.JTextField txtUsuario;
     // End of variables declaration//GEN-END:variables
