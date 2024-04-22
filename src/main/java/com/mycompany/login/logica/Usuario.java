@@ -7,7 +7,7 @@ import javax.persistence.Id;
 
 /**
  *
- * @author marcelrubin
+ * @author marcelrubin ...
  */
 
 @Entity
