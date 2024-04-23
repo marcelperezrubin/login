@@ -8,6 +8,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Query;
 import javax.persistence.EntityNotFoundException;
+import javax.persistence.Persistence;
 import javax.persistence.criteria.CriteriaQuery;
 import javax.persistence.criteria.Root;
 
@@ -21,6 +22,12 @@ public class UsuarioJpaController implements Serializable {
         this.emf = emf;
     }
     private EntityManagerFactory emf = null;
+    
+    public UsuarioJpaController() {
+    emf =  Persistence.createEntityManagerFactory("loginPU");
+    }
+    
+    
 
     public EntityManager getEntityManager() {
         return emf.createEntityManager();

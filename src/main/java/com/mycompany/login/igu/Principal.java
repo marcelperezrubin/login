@@ -1,16 +1,18 @@
 package com.mycompany.login.igu;
 
+import com.mycompany.login.logica.Controladora;
+
 /**
  *
  * @author marcelrubin
  */
 public class Principal extends javax.swing.JFrame {
-
-    /**
-     * Creates new form Login
-     */
+    Controladora control; 
+    
     public Principal() {
         initComponents();
+        control = new  Controladora ();
+        
     }
 
     
@@ -160,7 +162,18 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_btnLimpiarActionPerformed
 
     private void btnLoginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnLoginActionPerformed
-        // TODO add your handling code here:
+        
+        // aqui vamos a crear la logica del boton Login, tenemos un metodo deprecado getText
+        
+        String usuario = txtUsuario.getText();
+        String contrasenia = txtContrasenia.getText();
+        
+        String mensaje = control.validarUsuario(usuario,contrasenia);
+        
+        txtMensaje.setText(mensaje);
+        
+        
+        
     }//GEN-LAST:event_btnLoginActionPerformed
 
     
