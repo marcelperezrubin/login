@@ -18,31 +18,27 @@ public class Controladora {
     
 
     public String validarUsuario(String usuario, String contrasenia) {
-        
-        
-        String mensaje = "";
-        List<Usuario> listaUsuarios = controlPersis.traerUsuarios();
-        for (Usuario usu : listaUsuarios) {
-           // para probar si esta funcionando System.out.println("Usuario: " + usu.getNombreUsuario());
+    String mensaje = "";
+    List<Usuario> listaUsuarios = controlPersis.traerUsuarios();
+    boolean usuarioEncontrado = false;
+    
+    for (Usuario usu : listaUsuarios) {
         if (usu.getNombreUsuario().equals(usuario)) {
-           // para probar si esta funcionando System.out.println("Usuario: " + usu.getNombreUsuario());
-            
-            // para probar si esta funcionando System.out.println("Contraseña: " + usu.getContraseña());
-            if(usu.getContraseña().equals(contrasenia)) {
-            // para probar si esta funcionando System.out.println("Contraseña: " + usu.getContraseña());
-            mensaje = "Usuario y contraseña correctos.";
-            return mensaje;
+            usuarioEncontrado = true;
+            if (usu.getContraseña().equals(contrasenia)) {
+                mensaje = "Usuario y contraseña correctos.";
+            } else {
+                mensaje = "Contraseña incorrecta";
             }
-            else {
-            mensaje = "Contraseña incorrecta";
-            }
+            // Si se encontró el usuario y se validó la contraseña, salir del bucle
+            break;
         }
-        
-        else{
-        mensaje = "usuario no encontrado";
-        }
-      } 
-        
-        return mensaje;
-   }
+    }
+    
+    if (!usuarioEncontrado) {
+        mensaje = "Usuario no encontrado";
+    }
+    
+    return mensaje;
+}
 }
